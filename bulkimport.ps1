@@ -1,8 +1,7 @@
 #Get users from the CSV
-#$TeamUsers = Import-Csv -Path "C:\Users\Marc.Oram\OneDrive - ACP CreativIT\nationrrusers.csv"
 
 #Parameters
-$CSVPath = "C:\Users\Marc.Oram\OneDrive - ACP CreativIT\nationrrusers.csv"
+$CSVPath = "C:\Users\filename.csv"
 $TeamDisplayName = "testing"
  
 Try {
@@ -10,7 +9,6 @@ Try {
     #Connect-MicrosoftTeams
  
     #Get Team ID from Display Name
-    #$TeamID = "b5dcc259-a6ed-4a67-80c5-332eea3a9d2e"
     $TeamID = Get-Team | Where {$_.DisplayName -eq $TeamDisplayName} | Select -ExpandProperty GroupID
 
     #Get users from the CSV
